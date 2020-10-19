@@ -1,0 +1,10 @@
+/* Below are the variables we used to create our css */
+:root {
+	--font-header: 'Comfortaa';
+	--font-primary: 'Poppins';
+	--highlight: #EF9F2D;
+	--blueHighlight: #7AB19D;
+	--chocolate: #BE5A32;
+	--text: #3B1B10;
+	--background: #FBFAF9;
+}

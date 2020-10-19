@@ -1,0 +1,100 @@
+@charset "UTF-8";
+nav{
+	position: fixed;
+	top: 0;
+	left:0
+}
+nav ul{
+	display: flex;
+}
+nav ul li {
+	list-style: none;
+	padding-left: 10px;
+}
+
+/* Hamburger Button Styles */
+.toggle-button{
+	position: fixed;
+	width: 44px;
+	height: 40px;
+	top: 18px;
+	left: 3%;
+	padding: 4px;
+	transition: 0.25s;
+	z-index: 15;
+}
+.toggle-button:hover{
+	cursor: pointer;
+}
+.toggle-button .menu-bar{
+	position: absolute;
+	border-radius: 2px;
+	width: 80%;
+	transition: 0.5s;
+}
+.toggle-button .menu-bar-top {
+	border: 4px solid var(--text);
+	border-bottom: none;
+	top:0;
+}
+.toggle-button .menu-bar-middle{
+	height:4px;
+	background-color: var(--text);
+	margin-top: 7px;
+	margin-bottom: 7px;
+	top:4px;
+}
+.toggle-button .menu-bar-bottom{
+	border: 4px solid var(--text);
+	border-top: none;
+	top:22px;
+}
+.button-open .menu-bar-top{
+	border-color: var(--chocolate);
+	transform: rotate(45deg) translate(8px, 8px);
+	transition: 0.5s;
+}
+.button-open .menu-bar-middle{
+	background-color: var(--chocolate);
+	transform: translate(230px);
+	transition: 0.1s ease-in;
+	opacity: 0;
+}
+.button-open .menu-bar-bottom{
+	border-color: var(--chocolate);
+	transform: rotate(-45deg) translate(7px, -7px);
+	transition: 0.5s;
+}
+span.mobile-menu{
+	display: none;
+}
+div.mobile-menu ul {
+	transition: 0.25s all;
+}
+
+/* change to hamburger on mobile */
+@media(max-width: 450px){
+	span.mobile-menu{
+		display: block;
+	}
+	div.mobile-menu ul{
+		flex-direction: column;
+		position: fixed;
+		left: -150px;
+	}
+	div.mobile-menu.menu-show ul {
+		transition: 0.5s all;
+		background-color: var(--highlight);
+		opacity: 0.9;
+		margin: 0;
+		top: 0;
+		bottom: 0;
+		right:20%;
+		left: 0;
+		padding-top: 120px;
+		font-size: 24px;
+	}
+	div.mobile-menu.menu-show ul li {
+		margin: 10px;
+	}
+}

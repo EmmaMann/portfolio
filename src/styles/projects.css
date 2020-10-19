@@ -1,0 +1,64 @@
+#root > div > h3 {
+	margin-right: 13%;
+}
+/* accomodate sticky header */
+#projects::before{
+	display: block; 
+	content: " "; 
+	margin-top: -60px; 
+	height: 60px; 
+	visibility: hidden; 
+	pointer-events: none;
+}
+.projects {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-around;
+	margin: 60px;
+}
+.projects div a {
+	margin: 0 auto;
+	position: relative;
+}
+img {
+	max-width: 400px;
+	max-height: 400px;
+	margin: 40px;
+	margin-bottom: 60px;
+	transition: 0.25s all ease-in;
+}
+.projects > div > div{
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+.projects h4{
+	opacity: 0;
+	width:100%;
+	position: absolute;
+	top:150px;
+	left:20%;
+	max-width:300px;
+	z-index: 300;
+	text-align: center;
+	line-height: 1.6;
+	transition: 0.25s all ease-in;
+}
+.projects > div > div:hover h4 {
+	opacity: 1;
+}
+.projects > div > div:hover img {
+	filter: blur(2px);
+	opacity: 0.7;
+}
+
+/* smaller images for smaller screens */
+@media(max-width: 480px){
+	img {
+		/* display: none; */
+		max-width: 300px;
+		max-height: 300px;
+		margin: 20px;
+	}
+}
